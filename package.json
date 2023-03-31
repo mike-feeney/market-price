@@ -1,0 +1,37 @@
+{
+  "name": "market-price",
+  "version": "1.0.0",
+  "description": "web application to help shoppers save on their groceries/general purchases",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mike-feeney/market-price.git"
+  },
+  "author": "Mike Feeney",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mike-feeney/market-price/issues"
+  },
+  "homepage": "https://github.com/mike-feeney/market-price#readme",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "connect-mongo": "^5.0.0",
+    "dotenv": "^16.0.3",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "express-flash": "^0.0.2",
+    "express-session": "^1.17.3",
+    "method-override": "^3.0.0",
+    "mongodb": "^5.1.0",
+    "mongoose": "^7.0.3",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.22",
+    "passport": "^0.6.0",
+    "passport-local": "^1.0.0",
+    "validator": "^13.9.0"
+  }
+}
