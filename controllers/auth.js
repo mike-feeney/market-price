@@ -91,7 +91,7 @@ exports.postSignup = (req, res, next) => {
   });
 
   User.findOne(
-    { $or: [{ email: req.body.email }, { userName: req.body.userName }] },
+    { $or: [{ email: req.body.email }, { userName: req.body.userName }] }).then(
     (err, existingUser) => {
       if (err) {
         return next(err);
@@ -102,7 +102,7 @@ exports.postSignup = (req, res, next) => {
         });
         return res.redirect("../signup");
       }
-      user.save((err) => {
+      user.save().then((err) => {
         if (err) {
           return next(err);
         }
