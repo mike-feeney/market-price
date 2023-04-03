@@ -90,19 +90,15 @@ exports.postSignup = (req, res, next) => {
     password: req.body.password,
   });
 
-  User.findOne(
-    { $or: [{ email: req.body.email }, { userName: req.body.userName }] }).then(
-    (err, existingUser) => {
-      if (err) {
-        return next(err);
-      }
+  User.findOne({ $or: [{ email: req.body.email }, { userName: req.body.userName }] })
+    .then( (existingUser) => {
       if (existingUser) {
         req.flash("errors", {
           msg: "Account with that email address or username already exists.",
         });
         return res.redirect("../signup");
       }
-      user.save().then((err) => {
+      user.save((err) => {
         if (err) {
           return next(err);
         }
@@ -113,6 +109,9 @@ exports.postSignup = (req, res, next) => {
           res.redirect("/profile");
         });
       });
-    }
-  );
-};
+    }).catch( (err) => {
+      if (err) {
+        return err;
+      }
+    })
+}
