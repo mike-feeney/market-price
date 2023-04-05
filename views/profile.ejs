@@ -1,0 +1,67 @@
+<%- include('partials/header') -%>
+<div class="card w-96 bg-base-100 shadow-xl">
+  <figure><img src="/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure>
+  <div class="card-body">
+    <h2 class="card-title">Shoes!</h2>
+    <p>If a dog chews shoes whose shoes does he choose?</p>
+    <div class="card-actions justify-end">
+      <button class="btn btn-primary">Buy Now</button>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row mt-5">
+      <div class="col-6">
+          <div>
+              <p><strong>User Name</strong>: <%= user.userName %></p>
+              <p><strong>Email</strong>: <%= user.email %></p>
+              <a href="/logout" class="col-3 btn btn-primary">Logout</a>
+          </div>
+          <div class="mt-5">
+            <h2>Search</h2>
+            <a href="/post/product/070847811169" class="col-3 btn btn-primary">Search</a>
+          </div>
+          <div class="mt-5">
+            <h2>Add a price</h2>
+            <form action="products/createProduct" method="POST">
+              <div class="mb-3">
+                  <label for="product" class="form-label">Product</label>
+                  <input type="text" class="form-control" id="product" name="product">
+              </div>
+              <div class="mb-3">
+                <label for="upc" class="form-label">UPC</label>
+                <input type="text" class="form-control" id="upc" name="upc">
+              </div>
+              <div class="mb-3">
+                <label for="location" class="form-label">Location</label>
+                <input type="text" class="form-control" id="location" name="location">
+              </div>
+              <div class="mb-3">
+                <label for="price" class="form-label">Price</label>
+                <input class="form-control" id="price" name="price">
+              </div>
+              <button type="submit" class="btn btn-primary" value="Upload">Submit</button>
+            </form>
+          </div>
+      </div>
+      <div class="col-6">
+        <ul class="row list-unstyled">
+        <% for(var i=0; i < products.length; i++) {%>
+          <li class="col-6 justify-content-between mt-5">
+            <a href="/post/<%= posts[i]._id%>">
+              <h2><%= products[i].product%></h2>
+            </a>
+            <h3><%= products[i].upc%></h3>
+            <h3><%= products[i].location%></h3>
+            <h3><%= products[i].price%></h3>
+          </li>
+        <% } %>
+        </ul>
+        <!-- <div class="row justify-content-center mt-5">
+          <a class="btn btn-primary" href="/feed">Return to Feed</a>
+        </div>   -->
+      </div>  
+    </div>
+  </div>
+</div>
+<%- include('partials/footer') -%>

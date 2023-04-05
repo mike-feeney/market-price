@@ -1,0 +1,16 @@
+<%- include('partials/header') -%>
+<%- console.log('Test') -%>
+
+<h2>Product: <%= product[0].product %></h2>
+<h3>UPC: <%= product[0].upc %></h3>
+
+<ul class="row list-unstyled">
+    <% for(var i=0; i< product.length; i++) {%>
+      <li class="col-6 justify-content-between mt-5">
+        <h2>Location: <%= product[i].location%></h2>
+        <h3>Price: <%= product[i].price%></h3>
+      </li>
+    <% } %>
+    </ul>
+
+<%- include('partials/footer') -%>

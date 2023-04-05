@@ -1,0 +1,18 @@
+.btn:hover {
+    /* background: #014552; */
+
+    background: #88df95;
+    color: #01252c;
+}
+
+.bg-primary {
+    background: #01252c;
+}
+
+.bg-primary-focus {
+    
+}
+
+.bg-accent {
+    background: #88df95;
+}

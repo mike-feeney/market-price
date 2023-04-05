@@ -12,12 +12,11 @@ module.exports = {
     createProduct: async (req, res) => {
       try {
         await Product.create({
-          // title: req.body.title,
-          // image: result.secure_url,
-          // cloudinaryId: result.public_id,
-          // caption: req.body.caption,
-          // likes: 0,
-          // user: req.user.id,
+          product: req.body.product,
+          upc: req.body.upc,
+          location: req.body.location,
+          price: req.body.price,
+          user: req.user.id,
         });
         console.log("Product has been added!");
         res.redirect("/profile");

@@ -1,7 +1,6 @@
 const express = require("express");
-const router = express.router();
+const router = express.Router();
 const productsController = require("../controllers/products");
-const { ensureAuth } = require("../middlware/auth");
 
 //Product Routes
 //Since linked from server js treat each path as:
